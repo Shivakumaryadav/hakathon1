@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacathon</title>
+</head>
+<body>
+    <input type="text" id="inputdata">
+    <button onclick="shiva()">submit</button>
+    <p id="sh"></p>
+    <script>
+       
+         function shiva(){
+            
+           
+            let cc=document.getElementById('inputdata').value;
+            console.log(cc);
+           
+            async function getdata(){
+           var url=(`https://api.nationalize.io?name=${cc}`);
+            let first=await fetch(url);
+            let data=await first.json();
+          
+          
+            console.log(data);
+           document.getElementById('sh').innerHTML=data;
+
+           
+            
+            
+            
+            } 
+           getdata();
+           
+        }
+       
+    </script>
+</body>
+</html>
